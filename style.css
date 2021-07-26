@@ -1,0 +1,329 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, tahoma;
+}
+body{
+    background-color: #efefef;
+}
+.container{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+section{
+    padding: 40px 0 30px;
+}
+.section-title{
+    font-size: 40px;
+    color: rgb(57, 101, 151);
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::before{
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    content: "";
+    width: 130px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(95, 38, 31);
+}
+.section-title::after{
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    content: "";
+    width: 75px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(95, 38, 31);
+}
+li{
+    list-style: none;
+}
+/* Start Nav */
+nav{
+    padding: 10px;
+    background-color: rgb(57, 101, 151);
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+nav .container{
+    display: flex;
+    justify-content: space-between;
+}
+nav .logo{
+    display: flex;
+    align-items: center;
+}
+nav .logo img{
+    filter: invert(1);
+    margin-right: 10px;
+}
+nav .logo p{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+nav .links{
+    display: flex;
+    align-items: center;
+}
+nav .links li{
+    margin: 0 20px;
+}
+nav .links li:last-child{
+    margin-right: 0;
+}
+nav .links li a{
+    color: #fff;
+    text-decoration: none;
+    transition: .1s;
+}
+nav .links li a:hover{
+    color: #ddd;
+}
+/* End Nav */
+/* Start Header */
+header{
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-image:linear-gradient(to top, rgba(0,0,0,.5),rgba(0,0,0,.5)) ,url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+header .container{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header .info h1{
+    color: #fff;
+    font-size: 70px;
+    margin-bottom: 5px;
+}
+header .info h3{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+header .info a{
+    display: inline-block;
+    background-color: rgb(57, 101, 151);
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: .25s;
+}
+header .info a:hover{
+    background-color: rgb(78, 135, 201);
+}
+
+/* End Header */
+
+/* Start About */
+.about{
+    background-color: #fff;
+}
+
+.about .content{
+    display: flex;
+    justify-content: space-between;
+}
+.about .content .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis:70%;
+}
+.about .content .text p{
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+}
+.about .content .text p span{
+    display: inline-block;
+    margin-bottom: 18px;
+}
+.about .content img{
+    flex-basis: 30%;
+    width: 100px;
+    border-radius: 10px;
+}
+.follow h4{
+    color: rgb(57, 101, 151);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.follow ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px 0 0;
+}
+.follow ul li a{
+    display: inline-block;
+    border-radius:50%;
+    background-color: rgb(57, 101, 151);
+    width: 40px;
+    height: 40px;
+    line-height: 43px;
+    text-align: center;
+    transition: .1s;
+}
+.follow ul li a:hover{
+    background-color: rgb(78, 135, 201);
+}
+.follow ul li i{
+    color: #fff;
+    font-size: 18px;
+}
+/* End About */
+/* Start Skills */
+.skill{
+    padding: 10px;
+    background-color: rgb(78, 135, 201);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    /* box-shadow: 2px 2px 10px 1px rgb(0,0,0,.5); */
+}
+.skill .name{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    width: 120px;
+    padding-left: 10px;
+}
+.skill div{
+    height: 50px;
+    width: calc(100% - 200px);
+    background: rgb(56, 104, 158);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.skill div span{
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: rgb(238, 238, 238);
+    transition: all 1s ease-in-out;
+}
+.skill .number{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    width: 40px;
+}
+/* End Skills */
+/* Start Contact */
+.contact{
+    background-image:linear-gradient(to top, rgba(255, 255, 255, 0.91), rgba(255,255,255,.91)), url(images/world.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contact-box{
+    display: flex;
+    justify-content: space-between;
+}
+.contact-box .my-information,
+.contact-box .contact-input{
+    flex: 1;
+}
+.contact h3{
+    font-size: 22px;
+    color: rgb(57, 101, 151);
+    margin-bottom: 15px;
+}
+.my-information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.my-information .info-box{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.my-information .info-box li{
+    padding-left: 10px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.my-information .info-box li i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.inputs form *:not(:last-child){
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 15px 0;
+    font-size: 17px;
+    resize: none;
+    border: 1px solid #ccc;
+    background-color: rgb(238, 238, 238, .5);
+    color: #444;
+    outline: none;
+    border-radius: 4px;
+}
+.inputs form button{
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 17px;
+    text-align: center;
+    background-color: rgb(57, 101, 151);
+    border: 0;
+    color: #ffffff;
+    outline: none;
+    transition: .25s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.inputs form button:hover{
+    background-color: rgb(78, 135, 201);
+}
+/* End Contact */
+/* Footer */
+footer{
+    padding: 20px 0;
+    background-color: rgb(57, 101, 151);
+    color: #fff;
+}
+footer .container{
+    display: flex;
+    justify-content: space-between;
+}
+footer p{
+    font-size: 15px;
+}
+/* Media quiry part */
+/* @media screen and (max-width:979px){
+    .container{
+        width: 1100px;
+    }
+}
+@media screen and (max-width:978px){
+    .container{
+        width: 650px;
+    }
+}
+@media screen and (max-width:701px){
+    .container{
+        width: 500px;
+    }
+}
+@media screen and (max-width:305px){
+    .container{
+        width: 350px;
+    }
+} */
