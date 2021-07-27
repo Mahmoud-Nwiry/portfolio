@@ -27,4 +27,34 @@ window.onscroll = function() {
         lines.forEach(e=>{
             e.style.width = e.dataset.prog;
         });
-    }}
+    }else{
+        lines.forEach(e=>{
+            e.style.width = 0;
+        });
+    }
+
+    if(pageYOffset > 10)
+        document.querySelector('nav').classList.add("scrolled");
+    else
+        document.querySelector('nav').classList.remove("scrolled");
+}
+
+let mneu = document.querySelector(".mneu i");
+let linksList = document.querySelector('.links');
+mneu.addEventListener('click', ()=>{
+    linksList.classList.toggle('active');
+});
+
+let links = document.querySelectorAll('.links a');
+links.forEach(e=>{
+    e.addEventListener('click',()=>{
+        linksList.classList.toggle('active');
+    })
+})
+document.addEventListener('click',(e)=>{
+    if(e.target !== mneu && e.target !== linksList){
+        if(linksList.classList.contains('active')){
+            linksList.classList.toggle('active')
+        }
+    }
+})

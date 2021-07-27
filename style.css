@@ -4,11 +4,13 @@
     box-sizing: border-box;
     font-family: Arial, tahoma;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #efefef;
 }
 .container{
-    width: 1100px;
     margin: 0 auto;
 }
 
@@ -49,8 +51,18 @@ li{
 nav{
     padding: 10px;
     background-color: rgb(57, 101, 151);
-    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    box-shadow: 0 3px 20px 4px rgb(0 0 0 / 40%);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: .2s;
 }
+
+nav.scrolled{
+    background-color: rgb(215, 218, 223);
+}
+
 nav .container{
     display: flex;
     justify-content: space-between;
@@ -63,14 +75,34 @@ nav .logo img{
     filter: invert(1);
     margin-right: 10px;
 }
+nav.scrolled .logo img{
+    filter: invert(0);
+}
+
 nav .logo p{
     font-size: 20px;
     font-weight: 600;
     color: #fff;
 }
+nav.scrolled .logo p{
+    color: rgb(57, 101, 151);
+}
 nav .links{
     display: flex;
     align-items: center;
+    transition: .25s;
+}
+nav .mneu{
+    display: none;
+    align-items: center;
+}
+nav .mneu i{
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+nav.scrolled .mneu i{
+    color: #000;
 }
 nav .links li{
     margin: 0 20px;
@@ -86,7 +118,14 @@ nav .links li a{
 nav .links li a:hover{
     color: #ddd;
 }
-/* End Nav */
+nav.scrolled .links li a{
+    color: rgb(57, 101, 151);
+    font-weight: 600;
+}
+nav.scrolled .links li a:hover{
+    color: rgb(63, 144, 236);
+}
+    /* End Nav */
 /* Start Header */
 header{
     width: 100%;
@@ -129,10 +168,6 @@ header .info a:hover{
 /* End Header */
 
 /* Start About */
-.about{
-    background-color: #fff;
-}
-
 .about .content{
     display: flex;
     justify-content: space-between;
@@ -186,6 +221,16 @@ header .info a:hover{
 }
 /* End About */
 /* Start Skills */
+.skills{
+    background-color: rgb(22, 45, 71);
+}
+.skills h2{
+    color: #fff;
+}
+.skills h2::after,
+.skills h2::before{
+    background-color: rgb(192, 191, 191);
+}
 .skill{
     padding: 10px;
     background-color: rgb(78, 135, 201);
@@ -214,7 +259,7 @@ header .info a:hover{
     display: block;
     height: 100%;
     width: 0;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(227, 223, 245);
     transition: all 1s ease-in-out;
 }
 .skill .number{
@@ -258,7 +303,7 @@ header .info a:hover{
     padding-left: 10px;
     margin-bottom: 25px;
     font-size: 18px;
-    font-weight: 600;
+    
 }
 .my-information .info-box li i{
     font-size: 20px;
@@ -307,23 +352,129 @@ footer p{
     font-size: 15px;
 }
 /* Media quiry part */
-/* @media screen and (max-width:979px){
+@media (min-width: 576px) {
     .container{
-        width: 1100px;
+        width: 540px;
     }
 }
-@media screen and (max-width:978px){
-    .container{
-        width: 650px;
+@media (max-width : 767.9px){
+    .about .content .text p{
+        font-weight: 400;
+        font-size: 17px;
+    }
+    .about .content{
+        flex-direction: column;
+    }
+    .about .content img{
+        width: 100%;
+    }
+    .follow{
+        margin-bottom: 40px;
+    }
+    .contact .contact-box{
+        flex-direction: column;
     }
 }
-@media screen and (max-width:701px){
+ @media (min-width: 768px) { /* mediam => Tablit */
     .container{
-        width: 500px;
+        width: 720px;
     }
 }
-@media screen and (max-width:305px){
-    .container{
-        width: 350px;
+@media (max-width: 991.9px){
+    .my-information .info-box li{
+        font-size: 16px;
+        font-weight: 400;
     }
-} */
+}
+@media (min-width: 992px){
+    .container{
+        width: 960px;
+    }
+}
+@media (min-width: 1200px) { /* small => Landscape phone */
+    .container{
+        width: 1170px;
+    }
+}
+@media (max-width: 575px) {
+    .container{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .section-title{
+        font-size: 30px;
+    }
+    .section-title::before{
+        width: 70px;
+    }
+    .section-title::after{
+        width: 50px;
+    }
+    nav .links{
+        display: none;
+    }
+    nav .mneu{
+        display: flex;
+    }
+    header .info h1{
+        font-size: 30px;
+    }
+    header .info h3{
+        font-size: 20px;
+    }
+    header .info a{
+        font-size: 13px;
+        padding: 6px 5px;
+    }
+    .about .content .text p{
+        font-size: 15px;
+        font-weight: normal;
+    }
+    .follow h4,
+    .contact h3{
+        font-size: 18px;
+    }
+    .follow ul li a{
+        width: 30px;
+        height: 30px;
+        line-height: 33px;
+    }
+    .skill{
+        flex-wrap: wrap;
+    }
+    .skill .name{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .skill div{
+        width: calc(100% - 50px);
+        height: 25px;
+    }
+    footer p{
+        font-size: 12px;
+    }
+    
+    nav .links.active,
+    nav.scrolled .links.active{
+        display: block;
+        width: 90%;
+        position: absolute;
+        top: 60px;
+        z-index: 99;
+        right: -10px;
+        text-align: center;
+        background-color: rgb(243, 243, 243);
+        box-shadow: -6px 6px 17px -5px rgb(77 77 77);
+    }
+    nav .links.active li,
+    nav.scrolled .links.active li{
+        color: #000;
+        padding: 25px 0;
+        border-bottom: 1px solid #cccccc55;
+    }
+    nav .links.active li a,
+    nav.scrolled .links.active li a{
+        color: rgb(57, 101, 151);
+        font-weight: 600;
+    }
+}
